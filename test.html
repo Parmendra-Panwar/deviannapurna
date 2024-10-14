@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="floating-icons">
+        <i class="fas fa-star icon star"></i>
+        <i class="fas fa-book icon book"></i>
+        <i class="fas fa-pencil-alt icon pen"></i>
+        <i class="fas fa-graduation-cap icon education"></i>
+        <i class="fas fa-laptop-code icon laptop"></i>
+        <i class="fas fa-lightbulb icon lightbulb"></i>
+        <i class="fas fa-chalkboard-teacher icon teacher"></i>
+        <i class="fas fa-apple-alt icon apple"></i>
+      </div>
+      <div class="hero-content">
+        <h1 class="headingTitle">Welcome to Devi Annapurna Vidhya Mandir</h1>
+      </div>
+      <div class="hero-content">
+        <p>Your Child's Future Begins Here</p>
+        <button>Learn More</button>
+      </div>
+      <div class="hero-content">
+        <img
+          src="./images/rb_159771.png"
+          alt="School Image"
+          style="height: 399px"
+        />
+      </div>
+    </div>
+
+    <!-- Sections below -->
+    <section class="fade-in">
+      <h2>About Our School</h2>
+      <p>We provide quality education with a focus on overall development.</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Our Vision</h2>
+      <p>To nurture future leaders and innovators.</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out for inquiries and admissions.</p>
+    </section>
+
+    <script>
+      // Fade in animation when sections come into view
+      const sections = document.querySelectorAll(".fade-in");
+
+      window.addEventListener("scroll", () => {
+        const triggerBottom = (window.innerHeight / 5) * 4;
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop < triggerBottom) {
+            section.classList.add("visible");
+          }
+        });
+      });
+
+      // Intersection Observer for fade-in effect
+      const heroContent = document.querySelector(".hero-content");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      });
+
+      // Observe the hero content
+      observer.observe(heroContent);
+    </script>
+  </body>
+</html>

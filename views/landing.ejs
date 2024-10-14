@@ -1,0 +1,179 @@
+<% layout("/layouts/boilerplate") %>
+
+  <head>
+    <link rel="stylesheet" href="./css/landing.css" />
+    <link rel="stylesheet" href="./css/contect.css" />
+  </head>
+
+  <body>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="floating-icons">
+        <i class="fas fa-star icon star"></i>
+        <i class="fas fa-book icon book"></i>
+        <i class="fas fa-pencil-alt icon pen"></i>
+        <i class="fas fa-graduation-cap icon education"></i>
+        <i class="fas fa-laptop-code icon laptop"></i>
+        <i class="fas fa-lightbulb icon lightbulb"></i>
+        <i class="fas fa-chalkboard-teacher icon teacher"></i>
+        <i class="fas fa-apple-alt icon apple"></i>
+      </div>
+      <div class="hero-content">
+        <h1 class="headingTitle">Welcome to Devi Annapurna Vidhya Mandir</h1>
+      </div>
+      <div class="hero-content">
+        <p>Your Child's Future Begins Here</p>
+        <button>Learn More</button>
+      </div>
+      <div class="hero-content">
+        <img src="./images/rb_159771.png" alt="School Image" style="height: 399px" />
+      </div>
+    </div>
+
+    <!-- Sections below -->
+    <section class="fade-in about-school">
+      <div>
+        <h2>About Our School</h2>
+        <p>
+          Devi Annapurna Vidhya Mandir has been dedicated to providing quality
+          education since 2000. Our school is committed to nurturing academic
+          achievement and personal growth, fostering a love for learning while
+          instilling values of respect, discipline, and compassion in every
+          student.
+        </p>
+      </div>
+      <div class="parent">
+        <img src="./images/boy.png" alt="" class="child" />
+      </div>
+    </section>
+
+    <section class="fade-in vission">
+      <h2>Our Vision</h2>
+      <p>To nurture future leaders and innovators.</p>
+      <p>
+        To be a center of academic excellence where students are empowered to
+        reach their full potential, develop strong moral character, and contribute
+        meaningfully to society.
+      </p>
+      <p>
+        Our mission is to create a supportive and inclusive learning environment
+        that promotes intellectual curiosity, creativity, and leadership. We aim
+        to equip students with the skills, knowledge, and confidence they need to
+        succeed in life, both academically and personally.
+      </p>
+    </section>
+    
+    <section class="fade-in ">
+      <h2>About Us</h2>
+      <div class="About-Us">
+       <div class="principal">
+        <img src="/images/principal.jpg" alt="" class="principalImage">
+        <h3>Our Principal</h3>
+        <p>Mr. Ramesh Kumar</p>
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+       <div class="principal">
+        <img src="/images/principal.jpg" alt="" class="principalImage">
+        <h3>Our Principal</h3>
+        <p>Mr. Ramesh Kumar</p>
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+      </div>
+    </section>
+    
+    <section class="fade-in Event-Feature">
+      <h2><b>Events  &  Featur</b></h2>
+      <div class="About-Us">
+       <div class="cardEvents">
+        <img src="/images/principal.jpg" alt="" class="principalImage  card-Image">
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+       <div class="cardEvents cardEvents-C1">
+        <img src="/images/principal.jpg" alt="" class="principalImage  card-Image">
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+       <div class="cardEvents cardEvents-C2">
+        <img src="/images/principal.jpg" alt="" class="principalImage  card-Image">
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+       <div class="cardEvents cardEvents-C3">
+        <img src="/images/principal.jpg" alt="" class="principalImage  card-Image">
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+       <div class="cardEvents cardEvents-C4">
+        <img src="/images/principal.jpg" alt="" class="principalImage  card-Image">
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+       <div class="cardEvents cardEvents-C5">
+        <img src="/images/principal.jpg" alt="" class="principalImage  card-Image">
+        <p> Our mission is to create a supportive and inclusive learning environment
+          that promotes intellectual curiosity</p>
+       </div>
+      </div>
+    </section>
+    <section id="contact" class="fade-in contectUs">
+      <h1 class="section-header">Contact</h1>
+      <div class="contact-wrapper">
+        <form id="contact-form " class="form-horizontal" role="form">
+
+          <div class="col-sm-12">
+            <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required />
+          </div>
+
+          <br>
+          <div class="col-sm-12">
+            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required />
+          </div>
+          <br>
+          <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+          <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+            <div class="alt-send-button">
+              <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+            </div>
+          </button>
+        </form>
+
+      </div>
+      </div>
+    </section>
+
+    <script>
+      // Fade in animation when sections come into view
+      const sections = document.querySelectorAll(".fade-in");
+
+      window.addEventListener("scroll", () => {
+        const triggerBottom = (window.innerHeight / 5) * 4;
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop < triggerBottom) {
+            section.classList.add("visible");
+          }
+        });
+      });
+
+      // Intersection Observer for fade-in effect
+      const heroContent = document.querySelector(".hero-content");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      });
+
+      // Observe the hero content
+      observer.observe(heroContent);
+
+    </script>
+  </body>

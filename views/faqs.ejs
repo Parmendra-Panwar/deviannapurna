@@ -1,0 +1,260 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="./css/faqs.css" />
+</head>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="search-container">
+  <input
+    type="text"
+    id="search"
+    placeholder="Search FAQs..."
+    onkeyup="filterFAQs()"
+  />
+</div>
+
+<div class="faq-container" id="faq-container">
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>1. What are the school hours?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>The school hours are from 8:00 AM to 3:00 PM, Monday to Friday.</p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>2. How do I apply for admission?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      You can apply for admission through our website or by visiting the school
+      office.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>3. What is the dress code policy?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>Students are required to wear the school uniform during school hours.</p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>4. Are there extracurricular activities available?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Yes, we offer various extracurricular activities, including sports, music,
+      and arts.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>5. What is the school’s policy on bullying?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Bullying is not tolerated in our school, and we have strict policies in
+      place to address it.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>6. How can I contact the school administration?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      You can contact the school administration via email or phone, details are
+      on our website.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>7. What is the homework policy?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Students are assigned homework regularly and are expected to complete it
+      on time.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>8. Are there any field trips?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Yes, we organize field trips for educational purposes throughout the year.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>9. Is transportation provided?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Transportation services are available for students living within a certain
+      distance from the school.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>10. What should I do if my child is sick?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      If your child is sick, please inform the school and ensure they rest and
+      recover.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>11. How are parents involved in the school?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Parents are encouraged to participate in school events and meetings to
+      support their children’s education.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>12. What are the school’s discipline policies?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      We have a strict code of conduct to ensure a safe and respectful
+      environment for all students.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>13. How can I pay school fees?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      School fees can be paid online through our website or at the school
+      office.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>14. What is the school's grading system?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      We use a letter grading system to evaluate student performance throughout
+      the year.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>15. Are there any scholarships available?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Yes, we offer scholarships based on academic performance and financial
+      need.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>16. Can parents visit the school?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Parents are welcome to visit the school during scheduled visiting hours.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>17. How are student complaints handled?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Student complaints are taken seriously and addressed promptly by the
+      administration.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>18. What is the school’s emergency plan?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      The school has an emergency plan in place for various situations,
+      including natural disasters.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span>19. How can I get involved in school activities?</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      Parents and students can get involved by volunteering for events and
+      joining committees.
+    </p>
+  </div>
+
+  <div class="faq-item" onclick="toggleAnswer(this)">
+    <span
+      >20. What resources are available for students with special needs?</span
+    >
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <p>
+      We offer a variety of resources and support for students with special
+      needs to ensure their success.
+    </p>
+  </div>
+</div>
+
+<div class="ask-more">
+  <h3>Ask More Questions</h3>
+  <input type="text" placeholder="Your Name" required />
+  <input type="email" placeholder="Your Email" required />
+  <textarea rows="4" placeholder="Your Question" required></textarea>
+  <button type="submit">Submit Question</button>
+</div>
+
+<script>
+  function toggleAnswer(item) {
+    const answer = item.nextElementSibling;
+    const icon = item.querySelector(".toggle-icon");
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+    icon.classList.toggle("active");
+  }
+
+  function filterFAQs() {
+    const searchInput = document.getElementById("search").value.toLowerCase();
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.textContent.toLowerCase();
+      item.style.display = question.includes(searchInput) ? "flex" : "none";
+      const answer = item.nextElementSibling;
+      answer.style.display = "none"; // Hide answer when filtering
+    });
+  }
+</script>

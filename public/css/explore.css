@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.memory-card {
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  margin: 15px;  /* Added margin */
+}
+
+.memory-card.tilt-left {
+  transform: rotate(-5deg);
+}
+
+.memory-card.tilt-right {
+  transform: rotate(5deg);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.memory-card .description {
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.memory-card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .memory-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .memory-card {
+    width: 100%;
+  }
+}
+
+.event-info{
+  padding: 20px;
+  background: #FFE9D0 ;
+}

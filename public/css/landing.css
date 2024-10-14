@@ -1,0 +1,310 @@
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  background: #fefefe;
+}
+
+section {
+  padding: 50px;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(45deg, #ff7675, #74b9ff, #55efc4, #fdcb6e);
+  background-size: 200% 200%; /* Reduced the size to make multiple colors visible */
+  animation: moveGradient 10s ease infinite; /* Smooth background animation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 20px; /* Add padding to avoid text hitting screen edge */
+}
+
+.hero-content {
+  max-width: 90%; /* Prevents content from exceeding screen width */
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 4vw; /* Responsive font size */
+  margin: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideUp 2s forwards;
+  line-height: 1.2; /* Prevent overlap */
+}
+
+.hero p {
+  font-size: 2vw; /* Responsive font size */
+  opacity: 0;
+  animation: fadeIn 2s 1s forwards;
+}
+
+.hero button {
+  padding: 10px 20px;
+  font-size: 1.5vw; /* Responsive button font */
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 2s 1.5s forwards;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(50%);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Background Gradient Animation */
+@keyframes moveGradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Section Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 6vw; /* Larger font for small screens */
+      line-height: 1.1; /* Adjust line height for smaller screens */
+  }
+  .hero p {
+      font-size: 3.5vw; /* Adjusted for smaller screens */
+  }
+  .hero button {
+      font-size: 4vw; /* Button adapts */
+      padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+      font-size: 8vw; /* Further reduce font size for very small devices */
+      line-height: 1.2; /* Prevent overlap */
+  }
+  .hero p {
+      font-size: 5vw; /* Ensure paragraph text fits */
+  }
+  .hero button {
+      font-size: 5vw; /* Responsive button size */
+      padding: 6px 12px;
+  }
+}
+
+/* Floating Icons */
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Icons are decorative */
+}
+
+.icon {
+  position: absolute;
+  font-size: 2em; /* Adjusted size for smaller icons */
+  color: white; /* Change color to match your design */
+  opacity: 0.7;
+  animation: floatIcon 6s ease-in-out infinite; /* Increased speed for more movement */
+}
+
+/* Floating Icon Specific Positions */
+.icon.star { top: 10%; left: 20%; }
+.icon.book { top: 20%; left: 80%; }
+.icon.pen { top: 30%; left: 40%; }
+.icon.education { top: 50%; left: 60%; }
+.icon.laptop { top: 60%; left: 20%; }
+.icon.lightbulb { top: 70%; left: 70%; }
+.icon.teacher { top: 40%; left: 10%; }
+.icon.apple { top: 80%; left: 50%; }
+
+/* Floating Animation */
+@keyframes floatIcon {
+  0% {
+      transform: translateY(0) scale(1);
+  }
+  50% {
+      transform: translateY(-20px) scale(1.1); /* Floating upward with slight scaling */
+  }
+  100% {
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* Fade-in Visibility */
+.fade-in {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1.5s ease; /* Transition effect */
+}
+
+.visible {
+  opacity: 1; /* Fade in */
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(45deg, #ff7675, #74b9ff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 90%;
+  width: 100%;
+  margin: 10px 0; /* Add margin to space out each content */
+}
+
+.hero-content img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+.hero-content img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start below its position */
+  animation: fadeInUp 1.5s forwards 1s; /* Fade in with delay */
+}
+
+/* Keyframes for the fade-in-up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Move down */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+.headingTitle{
+  font-weight: 700;
+}
+
+
+
+
+.about-school{
+  background: yellow;
+  
+  padding-bottom: 0;
+}
+
+.vission{
+  background: rgb(123, 200, 231);
+}
+
+.contectUs{
+  background: rgb(251, 40, 251);
+  padding: 0;
+}
+.principalImage{
+  height: 400px;
+}
+.About-Us{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.principal{
+  width: 300px;
+}
+@media ( max-width: 350px ){
+  .principalImage{
+    width: 230px;
+    height: auto;
+  }
+}
+
+.card-Image{
+  border-radius: 10px;
+}
+.cardEvents{
+  width: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 25px;
+  background: #f67f7f;
+  padding-top: 15px;
+  border-radius: 10px;
+}
+.cardEvents-C1{
+  background: #F0A8D0 ;
+}
+.cardEvents-C2{
+  background: #e94da3 ;
+}
+.cardEvents-C3{
+  background: #FFE9D0 ;
+}
+.cardEvents-C4{
+  background: #68e89d ;
+}
+.cardEvents-C5{
+  background: #B1AFFF;
+}
+
+.Event-Feature{
+  background: linear-gradient(45deg, #ff7675, #74b9ff, #55efc4, #fdcb6e);
+  background-size: 200% 200%; /* Reduced the size to make multiple colors visible */
+  animation: moveGradient 10s ease infinite; /* Smooth background animation */
+}
