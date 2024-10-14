@@ -36,7 +36,12 @@ app.get("/faqs", (req, res) => {
 app.get("/upcoming", (req, res) => {
   res.render("./upcoming.ejs")
 })
-
+app.get("/project", (req, res) => {
+  res.render("./project.ejs")
+})
+app.get("/fees", (req, res) => {
+  res.render("./fees.ejs")
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)

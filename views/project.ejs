@@ -1,0 +1,951 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="./css/project.css" />
+</head>
+
+<div class="container">
+  <h1>School Level Project Ideas</h1>
+  <input
+    type="text"
+    id="search"
+    placeholder="Search for projects..."
+    class="search-input"
+  />
+
+  <h2>Categories</h2>
+  <div class="categories">
+    <button class="category-btn" onclick="filterProjects('science')">
+      Science
+    </button>
+    <button class="category-btn" onclick="filterProjects('commerce')">
+      Commerce
+    </button>
+    <button class="category-btn" onclick="filterProjects('arts')">Arts</button>
+    <button class="category-btn" onclick="filterProjects('low-level')">
+      Low Level
+    </button>
+    <button class="category-btn" onclick="filterProjects('high-level')">
+      High Level
+    </button>
+    <button class="category-btn" onclick="showAllProjects()">Show All</button>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+    <!-- Science Projects -->
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>1. Solar Oven</h2>
+        <p>
+          Create a solar oven using a pizza box to learn about solar energy and
+          its applications.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>2. Water Filtration System</h2>
+        <p>
+          Build a simple water filtration system to understand the importance of
+          clean water.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>3. Homemade Volcano</h2>
+        <p>
+          Make a volcano using baking soda and vinegar to demonstrate chemical
+          reactions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Commerce Projects -->
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>4. Stock Market Simulation</h2>
+        <p>
+          Simulate a stock market to understand trading, investments, and
+          financial principles.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>5. Business Plan Competition</h2>
+        <p>
+          Create a business plan for a startup and present it to potential
+          investors.
+        </p>
+      </div>
+    </div>
+
+    <!-- Arts Projects -->
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>6. Recycled Art Installation</h2>
+        <p>
+          Design an art piece using recycled materials to promote
+          sustainability.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>7. Photography Exhibition</h2>
+        <p>
+          Organize a photography exhibition showcasing the theme of 'Nature'.
+        </p>
+      </div>
+    </div>
+
+    <!-- Low Level Projects -->
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>8. Plant Growth Experiment</h2>
+        <p>
+          Conduct an experiment to see how different factors affect plant
+          growth.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>9. Paper Airplane Challenge</h2>
+        <p>
+          Experiment with different paper airplane designs to test aerodynamics.
+        </p>
+      </div>
+    </div>
+
+    <!-- High Level Projects -->
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>10. Data Analysis Project</h2>
+        <p>Analyze a set of data to identify trends and make predictions.</p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>11. App Development</h2>
+        <p>
+          Create a mobile application to solve a specific problem in your
+          community.
+        </p>
+      </div>
+    </div>
+
+    <!-- Additional Projects -->
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>12. Model Solar System</h2>
+        <p>
+          Create a scale model of the solar system to learn about planets and
+          distances.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>13. Simple Circuit</h2>
+        <p>
+          Create a simple electrical circuit to learn about electricity and
+          circuits.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>14. Wind Turbine Model</h2>
+        <p>
+          Build a model wind turbine to learn about renewable energy sources.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>15. DNA Model</h2>
+        <p>
+          Create a model of DNA using craft materials to learn about genetics.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>16. Marketing Campaign</h2>
+        <p>
+          Develop a marketing campaign for a fictional product to understand
+          consumer behavior.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>17. Personal Finance Management</h2>
+        <p>
+          Create a personal finance plan and budget to learn about money
+          management.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>18. Art Therapy Session</h2>
+        <p>
+          Organize a session on art therapy to promote mental well-being through
+          creativity.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>19. Dance Performance</h2>
+        <p>
+          Choreograph and perform a dance piece to showcase cultural heritage.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>20. Recycling Awareness</h2>
+        <p>
+          Create a campaign to raise awareness about recycling and waste
+          reduction.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>21. Simple Website Creation</h2>
+        <p>
+          Create a simple website to learn about web development and HTML/CSS.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>22. AI Chatbot</h2>
+        <p>
+          Develop a simple AI chatbot to assist with common questions and tasks.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>23. Virtual Reality Experience</h2>
+        <p>Create a VR experience to explore a historical event or place.</p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>24. Electromagnet Experiment</h2>
+        <p>
+          Build an electromagnet and explore its applications in everyday life.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>25. Ethical Business Practices</h2>
+        <p>Research and present on the importance of ethics in business.</p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>26. Fashion Show</h2>
+        <p>Organize a fashion show featuring sustainable clothing designs.</p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>27. Basic Coding Project</h2>
+        <p>
+          Learn to code a simple game or application using a programming
+          language.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>28. Environmental Impact Study</h2>
+        <p>
+          Conduct a study on the environmental impact of a local industry or
+          practice.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>29. Rocket Launch Experiment</h2>
+        <p>
+          Build and launch a model rocket to learn about propulsion and
+          aerodynamics.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>30. Trade Fair</h2>
+        <p>
+          Organize a trade fair showcasing student-created products or services.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>31. Music Composition</h2>
+        <p>
+          Compose and perform an original piece of music for a school event.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>32. Simple Water Cycle Model</h2>
+        <p>
+          Create a model to demonstrate the water cycle using everyday
+          materials.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>33. pH Level Experiment</h2>
+        <p>
+          Test the pH levels of various liquids using litmus paper and analyze
+          the results.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>34. Solar System Mobile</h2>
+        <p>
+          Build a hanging mobile of the solar system to learn about the planets'
+          positions.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>35. Crystal Growing Experiment</h2>
+        <p>
+          Grow sugar or salt crystals to learn about crystallization and
+          chemical processes.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>36. Homemade Barometer</h2>
+        <p>
+          Make a barometer to measure air pressure and learn about weather
+          changes.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>37. Create a Budget Tracker</h2>
+        <p>
+          Develop a simple spreadsheet or app to help manage personal finances.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>38. Virtual Market Simulation</h2>
+        <p>
+          Simulate a market scenario to understand supply and demand concepts.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>39. Street Art Project</h2>
+        <p>
+          Create a mural or street art piece to express a social issue or
+          community theme.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>40. Sculpture from Recycled Materials</h2>
+        <p>
+          Make a sculpture using recycled materials to promote environmental
+          awareness.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>41. Basic Weather Station</h2>
+        <p>
+          Build a simple weather station using a thermometer, barometer, and
+          rain gauge.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>42. Color Mixing Experiment</h2>
+        <p>
+          Explore color mixing using paints or colored water to learn about
+          primary colors.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>43. AI-Based Weather Predictor</h2>
+        <p>
+          Develop a simple AI model to predict weather patterns based on
+          historical data.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>44. Renewable Energy Source Analysis</h2>
+        <p>
+          Research and present on different renewable energy sources and their
+          impact.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>45. Microorganism Observation</h2>
+        <p>
+          Collect samples from various sources and observe microorganisms under
+          a microscope.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="commerce">
+      <div class="project-details">
+        <h2>46. Create a Small Business Plan</h2>
+        <p>
+          Develop a business plan for a fictional company, including marketing
+          strategies.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="arts">
+      <div class="project-details">
+        <h2>47. Community Theater Production</h2>
+        <p>
+          Organize and perform a play to engage the community and showcase
+          talent.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>48. Simple Robotics Project</h2>
+        <p>
+          Build a basic robot using a kit to understand basic engineering
+          principles.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="high-level">
+      <div class="project-details">
+        <h2>49. Machine Learning Image Classifier</h2>
+        <p>
+          Develop a simple image classifier using machine learning algorithms.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="science">
+      <div class="project-details">
+        <h2>50. Experiment with Biodegradable Materials</h2>
+        <p>
+          Test the decomposition of various materials to study environmental
+          impacts.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>51. Plant Growth Observation</h2>
+        <p>
+          Grow a plant from a seed and document its growth over time in a
+          journal.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>52. DIY Bird Feeder</h2>
+        <p>
+          Make a simple bird feeder using recyclable materials to attract local
+          birds.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>53. Color Wheel Creation</h2>
+        <p>
+          Create a color wheel using paints or colored paper to learn about
+          colors.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>54. Shadow Puppet Show</h2>
+        <p>
+          Make shadow puppets and perform a short story using a flashlight for
+          effect.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>55. Weather Chart</h2>
+        <p>
+          Create a weather chart to track daily weather changes over a month.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>56. Recycled Art Project</h2>
+        <p>
+          Use recyclable materials to create a piece of art, promoting recycling
+          awareness.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>57. Simple Circuit Experiment</h2>
+        <p>
+          Build a basic circuit using a battery, wires, and a light bulb to
+          learn about electricity.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>58. DIY Kaleidoscope</h2>
+        <p>
+          Make a kaleidoscope using mirrors and a tube to explore light and
+          reflections.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>59. Nature Scavenger Hunt</h2>
+        <p>
+          Go on a nature scavenger hunt to find and identify various plants and
+          animals.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>60. Simple Science Experiment: Volcano</h2>
+        <p>
+          Create a baking soda and vinegar volcano to demonstrate chemical
+          reactions.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>61. Friendship Bracelets</h2>
+        <p>
+          Make colorful friendship bracelets using embroidery thread to promote
+          kindness.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>62. Cloud in a Jar</h2>
+        <p>
+          Create a cloud in a jar using hot water, ice, and shaving cream to
+          learn about weather.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>63. DIY Musical Instruments</h2>
+        <p>
+          Make simple musical instruments using household items and explore
+          sound.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>64. Recycled Bottle Planters</h2>
+        <p>
+          Transform plastic bottles into planters and grow herbs or small
+          flowers.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>65. Paper Mache Project</h2>
+        <p>
+          Use paper mache to create a 3D sculpture, exploring texture and form.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>66. Nature Rubbings</h2>
+        <p>
+          Collect leaves and make nature rubbings with crayons to study plant
+          textures.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>67. Homemade Slime</h2>
+        <p>
+          Make slime using glue and borax to explore properties of solids and
+          liquids.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>68. DIY Sunflower Seed Bird Feeder</h2>
+        <p>
+          Create a bird feeder using a pine cone, peanut butter, and birdseed to
+          attract birds.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>69. Shadow Art</h2>
+        <p>
+          Use toys to create shadow art on paper, exploring light and shapes.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>70. Origami Basics</h2>
+        <p>
+          Learn basic origami by folding paper into simple shapes and animals.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>71. DIY Wind Chimes</h2>
+        <p>
+          Create wind chimes using recycled materials to explore sound and wind.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>72. Story Stones</h2>
+        <p>
+          Paint stones with images and use them to tell stories, promoting
+          creativity.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>73. Magic Milk Experiment</h2>
+        <p>
+          Combine milk, food coloring, and dish soap to create colorful patterns
+          and learn about chemistry.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>74. DIY Herb Garden</h2>
+        <p>
+          Plant a small herb garden using pots and seeds to learn about
+          gardening.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>75. Butterfly Feeder</h2>
+        <p>
+          Create a butterfly feeder using sugar water to attract butterflies and
+          study their behavior.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>76. Ocean in a Bottle</h2>
+        <p>
+          Make a sensory ocean bottle with water, oil, and blue food coloring to
+          explore density.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>77. DIY Picture Frames</h2>
+        <p>
+          Create decorative picture frames using craft materials to showcase
+          favorite photos.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>78. Homemade Ice Cream</h2>
+        <p>
+          Make ice cream using milk, sugar, and ice to learn about freezing and
+          mixtures.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>79. Nature Collage</h2>
+        <p>
+          Create a collage using natural materials like leaves, flowers, and
+          twigs to explore textures.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="low-level">
+      <div class="project-details">
+        <h2>80. DIY Flashlight</h2>
+        <p>
+          Build a simple flashlight using a battery, bulb, and wires to
+          understand basic circuits.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>81. Interactive Storybook</h2>
+        <p>
+          Create an interactive digital storybook using tools like Scratch or
+          Twine to engage young readers.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>82. Solar Oven</h2>
+        <p>
+          Build a solar oven using a pizza box, foil, and plastic wrap to learn
+          about solar energy and cooking.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>83. Augmented Reality Art</h2>
+        <p>
+          Create augmented reality art using apps like HP Reveal to blend
+          digital and physical art.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>84. DIY Pet Rocks</h2>
+        <p>
+          Paint and decorate rocks to create your own "pet rocks" and share
+          their stories with friends.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>85. 3D Printed Models</h2>
+        <p>
+          Design and print 3D models using software like Tinkercad to understand
+          3D design and printing.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>86. DIY Kites</h2>
+        <p>
+          Create and decorate kites using lightweight materials and test their
+          flight outdoors.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>87. Time Capsule</h2>
+        <p>
+          Gather items to represent the current year, seal them in a container,
+          and plan to open it in the future.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>88. DIY Video Game</h2>
+        <p>
+          Use platforms like GameMaker or Scratch to create your own simple
+          video game and share it with others.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>89. Upcycled Fashion</h2>
+        <p>
+          Create a fashion item from old clothes or materials to promote
+          sustainability in fashion.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>90. DIY Miniature Garden</h2>
+        <p>
+          Design and create a miniature garden in a jar using small plants,
+          pebbles, and decorations.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>91. Paper Circuit Cards</h2>
+        <p>
+          Make greeting cards with integrated LED lights to explore basic
+          circuits and creativity.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>92. Interactive Map</h2>
+        <p>
+          Create an interactive map of your community using Google Maps or
+          similar tools, highlighting local spots.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>93. DIY Scratch-Off Cards</h2>
+        <p>
+          Make scratch-off cards using a mixture of acrylic paint and dish soap
+          for fun surprises.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>94. Photo Scavenger Hunt</h2>
+        <p>
+          Organize a photo scavenger hunt where participants take photos of
+          specific items or scenes in their neighborhood.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>95. Build a Birdhouse</h2>
+        <p>
+          Construct a simple birdhouse from wood or recycled materials to learn
+          about wildlife conservation.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>96. Aromatherapy Playdough</h2>
+        <p>
+          Make scented playdough using essential oils to engage senses and
+          encourage imaginative play.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>97. Personal Storytelling Podcast</h2>
+        <p>
+          Create a short podcast where you tell a story or share experiences to
+          practice public speaking.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>98. Weather Station</h2>
+        <p>
+          Build a simple weather station using basic tools to track and record
+          local weather patterns.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>99. DIY Candle Making</h2>
+        <p>
+          Learn to make your own scented candles using wax, wicks, and essential
+          oils.
+        </p>
+      </div>
+    </div>
+    <div class="project-card" data-category="creative">
+      <div class="project-details">
+        <h2>100. Community Mural</h2>
+        <p>
+          Collaborate with others to design and paint a mural that reflects your
+          community's culture and values.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("search").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const projectCards = document.querySelectorAll(".project-card");
+
+    projectCards.forEach((card) => {
+      const title = card.querySelector("h2").textContent.toLowerCase();
+      if (title.includes(searchTerm)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+
+  function filterProjects(category) {
+    const projectCards = document.querySelectorAll(".project-card");
+
+    projectCards.forEach((card) => {
+      if (card.getAttribute("data-category") === category) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  function showAllProjects() {
+    const projectCards = document.querySelectorAll(".project-card");
+    projectCards.forEach((card) => {
+      card.style.display = "";
+    });
+  }
+</script>

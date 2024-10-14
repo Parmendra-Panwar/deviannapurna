@@ -1,0 +1,595 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="./css/fees.css" />
+</head>
+<h1>School Fees Structure</h1>
+
+<div class="filter">
+  <label for="classFilter">Select Class:</label>
+  <select id="classFilter" onchange="filterClasses()">
+    <option value="all">All Classes</option>
+    <option value="kg1">KG1</option>
+    <option value="kg2">KG2</option>
+    <option value="1">I</option>
+    <option value="2">II</option>
+    <option value="3">III</option>
+    <option value="4">IV</option>
+    <option value="5">V</option>
+    <option value="6">VI</option>
+    <option value="7">VII</option>
+    <option value="8">VIII</option>
+    <option value="9">IX</option>
+    <option value="10">X</option>
+    <option value="11_science">XI (Science)</option>
+    <option value="12_science">XII (Science)</option>
+    <option value="11_commerce">XI (Commerce)</option>
+    <option value="12_commerce">XII (Commerce)</option>
+    <option value="11_arts">XI (Arts)</option>
+    <option value="12_arts">XII (Arts)</option>
+  </select>
+</div>
+
+<div class="class-tables">
+  <h2>Fees Breakdown</h2>
+
+  <div id="kg1" class="class-table">
+    <h3>KG1</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>20,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,000</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>1,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>1,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="kg2" class="class-table">
+    <h3>KG2</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>22,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>2,200</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,200</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>1,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>1,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="1" class="class-table">
+    <h3>I</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>30,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>3,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,500</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>2,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="2" class="class-table">
+    <h3>II</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>30,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>3,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,500</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>2,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="3" class="class-table">
+    <h3>III</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>32,400</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>3,200</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,600</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>2,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>2,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="4" class="class-table">
+    <h3>IV</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>32,400</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>3,200</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,600</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>2,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>2,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="5" class="class-table">
+    <h3>V</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>34,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>3,500</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>1,800</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>2,800</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>2,800</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="6" class="class-table">
+    <h3>VI</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>36,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>4,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>3,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>3,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="7" class="class-table">
+    <h3>VII</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>36,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>4,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>3,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>3,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="8" class="class-table">
+    <h3>VIII</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>36,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>4,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>3,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>3,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="9" class="class-table">
+    <h3>IX</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>38,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>4,500</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,500</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>3,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>3,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="10" class="class-table">
+    <h3>X</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>40,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>4,500</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,500</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>3,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>3,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="11_science" class="class-table">
+    <h3>XI (Science)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>50,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>5,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,500</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>4,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>4,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="12_science" class="class-table">
+    <h3>XII (Science)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>52,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>5,500</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,800</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>4,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>4,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="11_commerce" class="class-table">
+    <h3>XI (Commerce)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>50,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>5,000</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,500</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>4,000</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>4,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="12_commerce" class="class-table">
+    <h3>XII (Commerce)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee Type</th>
+          <th>Amount (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Fees</td>
+          <td>52,000</td>
+        </tr>
+        <tr>
+          <td>Exam Fees</td>
+          <td>5,500</td>
+        </tr>
+        <tr>
+          <td>Govt Fees</td>
+          <td>2,800</td>
+        </tr>
+        <tr>
+          <td>Games Fees</td>
+          <td>4,500</td>
+        </tr>
+        <tr>
+          <td>Activity Fees</td>
+          <td>4,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  function filterClasses() {
+    const selectedClass = document.getElementById("classFilter").value;
+    const classTables = document.querySelectorAll(".class-table");
+
+    classTables.forEach((table) => {
+      if (selectedClass === "all" || table.id === selectedClass) {
+        table.style.display = "block"; // Show the table
+      } else {
+        table.style.display = "none"; // Hide the table
+      }
+    });
+  }
+
+  // Initially show all class tables
+  filterClasses();
+</script>
