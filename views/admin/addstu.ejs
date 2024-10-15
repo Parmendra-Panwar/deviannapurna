@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="./css/addStu.css" />
+</head>
+<div class="containerr">
+  <h2>Add Student</h2>
+  <form action="/addStudent" method="POST">
+    <div class="form-group">
+      <label for="nam">Name:</label>
+      <input type="text" id="nam" name="nam" required />
+    </div>
+
+    <div class="form-group">
+      <label for="cls">Class:</label>
+      <input type="text" id="cls" name="cls" required />
+    </div>
+
+    <div class="form-group">
+      <label for="aadhar">Aadhar:</label>
+      <input type="number" id="aadhar" name="aadhar" />
+    </div>
+
+    <div class="form-group">
+      <label for="samagra">Samagra:</label>
+      <input type="text" id="samagra" name="samagra" />
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input type="number" id="mobile" name="mobile" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="father">Father's Name:</label>
+      <input type="text" id="father" name="father" />
+    </div>
+
+    <div class="form-group">
+      <label for="mother">Mother's Name:</label>
+      <input type="text" id="mother" name="mother" />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <textarea id="address" name="address"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" />
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="caste">Caste:</label>
+      <input type="text" id="caste" name="caste" />
+    </div>
+
+    <div class="form-group">
+      <label for="fees">Fees:</label>
+      <input type="number" id="fees" name="fees" />
+    </div>
+
+    <button type="submit" class="buttonn">Add Student</button>
+  </form>
+</div>

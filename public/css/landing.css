@@ -192,19 +192,7 @@ section {
   opacity: 1; /* Fade in */
 }
 
-.hero {
-  height: 100vh;
-  background: linear-gradient(45deg, #ff7675, #74b9ff);
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-}
+
 
 .hero-content {
   max-width: 90%;

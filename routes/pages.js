@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router();
 // const wrapAsync = require("../utils/wrapAsync.js");
 
-router.get("/", (req, res) => {
-  res.render("./landing.ejs")
-})
-
 router.get("/explore", (req, res) => {
   res.render("./explore.ejs")
 })

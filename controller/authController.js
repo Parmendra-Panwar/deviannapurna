@@ -31,7 +31,7 @@ module.exports.sendVerification = async (req, res) => {
       req.flash('error', 'Please fill in all fields');
       return res.redirect("/admin/signin");
     } else {
-      if (email === "panwparmendra7@gmail.com") {
+      if (email === "panwparmendra7@gmail.com" && password === "paras") {
         const verificationCode = crypto.randomInt(100000, 999999); // 6-digit code
         req.session.verificationCode = verificationCode;
         await sendVerificationEmail(email, verificationCode);
@@ -57,7 +57,7 @@ module.exports.verifyCode = async (req, res) => {
     try {
       req.flash('success', 'Verification code is correct');
       req.session.isAthen = true;
-      res.render("./adminDash.ejs")
+      res.render("./admin/adminDash.ejs")
     } catch (error) {
       req.flash('error', 'An error occurred');
       res.redirect("/admin/signin");

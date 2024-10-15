@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="./css/Students.css" />
+</head>
+
+<h1>Students List</h1>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Aadhar</th>
+        <th>Samagra</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Father</th>
+        <th>Mother</th>
+        <th>Address</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Caste</th>
+        <th>Fees</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(student => { %>
+      <tr>
+        <td data-label="Name"><%= student.nam || 'null' %></td>
+        <td data-label="Class"><%= student.cls || 'null' %></td>
+        <td data-label="Aadhar"><%= student.aadhar || 'null' %></td>
+        <td data-label="Samagra"><%= student.samagra || 'null' %></td>
+        <td data-label="Mobile"><%= student.mobile || 'null' %></td>
+        <td data-label="Email"><%= student.email || 'null' %></td>
+        <td data-label="Father"><%= student.father || 'null' %></td>
+        <td data-label="Mother"><%= student.mother || 'null' %></td>
+        <td data-label="Address"><%= student.address || 'null' %></td>
+        <td data-label="DOB">
+          <%= student.dob ? moment(student.dob).format('YYYY-MM-DD') : 'null' %>
+        </td>
+        <td data-label="Gender"><%= student.gender || 'null' %></td>
+        <td data-label="Caste"><%= student.caste || 'null' %></td>
+        <td data-label="Fees"><%= student.fees || 'null' %></td>
+        <td data-label="Actions">
+          <a href="/edit/<%= student._id %>">Edit</a> |
+          <a
+            href="/delete/<%= student._id %>"
+            onclick="return confirm('Are you sure?');"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
