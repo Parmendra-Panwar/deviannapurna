@@ -308,3 +308,31 @@ section {
   background-size: 200% 200%; /* Reduced the size to make multiple colors visible */
   animation: moveGradient 10s ease infinite; /* Smooth background animation */
 }
+
+.card-Image{
+  background-size: cover; /* or 'contain' to fit without cropping */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat;
+}
+.explore-image{
+  background-image: url('../images/Explore.webp');
+}
+.aboutus-image{
+  background-image: url('../images/Aboutus.jpg');
+}
+.faqs-image{
+  background-image: url('../images/FAQs.png');
+}
+.projects-image{
+  background-image: url('../images/359.jpg');
+}
+.admission-image{
+  background-image: url('../images/admission.jpeg');
+}
+.fees-image{
+  background-image: url('../images/Fees-Structure-Image-.jpg');
+}
+.events-image{
+  background-image: url('../images/Events.jpg');
+}
+

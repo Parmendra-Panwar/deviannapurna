@@ -107,3 +107,6 @@ body{
   margin-top: 5rem;
 }
 
+.nav-link:hover{
+  font-size: 105%;
+}
