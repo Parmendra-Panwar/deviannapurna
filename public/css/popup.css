@@ -1,0 +1,31 @@
+
+.popup {
+  width: 300px;
+  padding: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 10px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.popup p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.success {
+  background-color: #4caf50;
+}
+
+.error {
+  background-color: #f44336;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}

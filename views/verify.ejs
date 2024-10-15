@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+<div class="login-container">
+  <h1>Admin Login</h1>
+  <form action="/verify" method="POST">
+    <div class="form-group">
+      <label for="verify">Enter Code: </label>
+      <input type="text" id="verify" name="verify" required />
+    </div>
+    <div class="form-group">
+      <button type="submit">Verify</button>
+    </div>
+  </form>
+</div>

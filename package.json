@@ -4,18 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",  
-    "build": "echo 'Build process not specified for this project.'", 
+    "start": "node app.js",
+    "build": "echo 'Build process not specified for this project.'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^4.21.1",
-    "method-override": "^3.0.0"
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.7.1",
+    "nodemailer": "^6.9.15",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   }
 }
-
