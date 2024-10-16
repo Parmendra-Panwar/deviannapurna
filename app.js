@@ -15,6 +15,8 @@ const MongoStore = require("connect-mongo")
 const flash = require("connect-flash");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const nodemailer = require("nodemailer");
+const moment = require('moment');
 mongoose.set('debug', true);
 
 connectDB();
@@ -76,6 +78,34 @@ app.use("/", adminRoutes);
 
 app.get("/", (req, res) => {
   res.render("./landing.ejs")
+})
+
+app.post("/contact", async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'parmendrapanwar11@gmail.com',
+        pass: 'pmds zckn ktic ocat' // Use your generated app password
+      }
+    });
+
+    const mailOptions = {
+      from: 'parmendrapanwar11@gmail.com',
+      to: 'panwparmendra7@gmail.com',
+      subject: `This is A Contact Mail From Email: ${email} , Phone: ${phone} , name: ${name},`,
+      text: `Email: ${email} , Phone: ${phone} , name: ${name} --> Message: ${message}`
+    };
+
+    await transporter.sendMail(mailOptions);
+    req.flash('success', 'Your Mail Sent Successfully..');
+    res.redirect("/contact");
+  } catch (e) {
+    console.log(e);
+    req.flash('error', 'An error occurred');
+    res.redirect("/contact");
+  }
 })
 
 //rendom

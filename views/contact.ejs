@@ -17,11 +17,16 @@
     </p>
   </div>
 
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <input type="tel" placeholder="Your Phone Number" required />
-    <textarea placeholder="Your Message" rows="5" required></textarea>
+  <form action="/contact" method="post">
+    <input name="name" type="text" placeholder="Your Name" required />
+    <input name="email" type="email" placeholder="Your Email" required />
+    <input name="phone" type="tel" placeholder="Your Phone Number" required />
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      rows="5"
+      required
+    ></textarea>
     <input type="submit" value="Send Message" />
   </form>
 </div>

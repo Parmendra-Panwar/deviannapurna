@@ -29,5 +29,7 @@ router.get("/fees", (req, res) => {
 router.get("/contact", (req, res) => {
   res.render("./contact.ejs")
 })
-
+router.get("/history", (req, res) => {
+  res.render("./history.ejs")
+})
 module.exports = router;

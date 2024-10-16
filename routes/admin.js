@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require("../controller/authController.js")
 const athen = require("../Validator/isAthen.js")
 const Student = require("../models/students.js")
+const moment = require('moment');
 router.get("/adminDash", athen.isloggedIn, (req, res) => {
   res.render("./admin/adminDash.ejs")
 })
@@ -27,11 +28,33 @@ router.get("/addStu", (req, res) => {
   res.render("./admin/addStu.ejs")
 })
 // POST route to add a new student
+
+function calculateAge(dob) {
+  const dobParts = dob.split("-");
+  const year = parseInt(dobParts[0], 10);
+  const month = parseInt(dobParts[1], 10) - 1;
+  const day = parseInt(dobParts[2], 10);
+
+  const dobDate = new Date(year, month, day);
+  const today = new Date();
+
+  let age = today.getFullYear() - dobDate.getFullYear();
+  const monthDiff = today.getMonth() - dobDate.getMonth();
+  const dayDiff = today.getDate() - dobDate.getDate();
+
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age--;
+  }
+
+  return age;
+}
+
 router.post('/addStudent', async (req, res) => {
   try {
     // Extract data from the request body
     const { nam, cls, aadhar, samagra, mobile, email, father, mother, address, dob, gender, caste, fees } = req.body;
-
+    const age = calculateAge(dob);
+    // console.log(age);
     // Create a new student document
     const newStudent = new Student({
       nam,
@@ -46,7 +69,8 @@ router.post('/addStudent', async (req, res) => {
       dob,
       gender,
       caste,
-      fees
+      fees,
+      age,
     });
 
     // Save the student document to the database
@@ -71,18 +95,18 @@ router.get("/students", (req, res) => {
 })
 
 //edit
-router.get('/edit-student/:id', async (req, res) => {
+router.get('/edit/:id', async (req, res) => {
   const student = await Student.findById(req.params.id);
-  res.render('edit-student', { student });
+  res.render('./admin/edtStu.ejs', { student });
 });
 
-router.post('/edit-student/:id', async (req, res) => {
+router.put('/edit-student/:id', async (req, res) => {
   await Student.findByIdAndUpdate(req.params.id, req.body);
   res.redirect('/students');
 });
 
 //delete
-router.post('/delete-student/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   await Student.findByIdAndDelete(req.params.id);
   res.redirect('/students');
 });

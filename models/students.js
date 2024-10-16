@@ -20,7 +20,7 @@ const stu = new Schema({
     type: Number,
   },
   email: {
-    type: String
+    type: String,
   },
   father: {
     type: String,
@@ -42,6 +42,9 @@ const stu = new Schema({
   },
   fees: {
     type: Number,
+  },
+  age: {
+    type: Number
   }
 });
 

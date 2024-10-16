@@ -2,6 +2,13 @@
 <head>
   <link rel="stylesheet" href="./css/students.css" />
 </head>
+<form action="/logout" method="post">
+  <button>Logout</button>
+</form>
+
+<form action="/addStu" method="get">
+  <button>Add Student</button>
+</form>
 
 <h1>Students List</h1>
 <div class="container">
@@ -21,6 +28,7 @@
         <th>Gender</th>
         <th>Caste</th>
         <th>Fees</th>
+        <th>age</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -37,18 +45,27 @@
         <td data-label="Mother"><%= student.mother || 'null' %></td>
         <td data-label="Address"><%= student.address || 'null' %></td>
         <td data-label="DOB">
-          <%= student.dob ? moment(student.dob).format('YYYY-MM-DD') : 'null' %>
+          <%= student.dob ? new Date(student.dob).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'short', day: '2-digit' }) : 'Not Available'
+          %>
         </td>
         <td data-label="Gender"><%= student.gender || 'null' %></td>
         <td data-label="Caste"><%= student.caste || 'null' %></td>
         <td data-label="Fees"><%= student.fees || 'null' %></td>
+
+        <td data-label="age"><%= student.age || 'null' %></td>
         <td data-label="Actions">
-          <a href="/edit/<%= student._id %>">Edit</a> |
-          <a
-            href="/delete/<%= student._id %>"
+          <form action="/edit/<%= student._id %>" method="get">
+            <button>Edit</button>
+          </form>
+          |
+          <form
+            action="/delete/<%= student._id %>?_method=delete"
+            method="post"
             onclick="return confirm('Are you sure?');"
-            >Delete</a
           >
+            <button>Delete</button>
+          </form>
         </td>
       </tr>
       <% }) %>
