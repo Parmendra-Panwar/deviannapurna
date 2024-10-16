@@ -75,16 +75,13 @@ router.post('/addStudent', async (req, res) => {
 
     // Save the student document to the database
     await newStudent.save();
+    req.flash('success', 'Student Added successfully');
     res.redirect("/addStu")
   } catch (error) {
     console.error('Error while saving student:', error);
-    chacked = 500;
-    // Send appropriate error response based on the error type
-    if (error.name === 'ValidationError') {
-      return res.redirect("/addStu")
-    } else {
-      return res.redirect("/addStu")
-    }
+
+    req.flash('error', 'Failed to Add Student');
+    return res.redirect("/addStu")
   }
 });
 
@@ -102,12 +99,14 @@ router.get('/edit/:id', async (req, res) => {
 
 router.put('/edit-student/:id', async (req, res) => {
   await Student.findByIdAndUpdate(req.params.id, req.body);
+  req.flash('success', 'Student Edited successfully');
   res.redirect('/students');
 });
 
 //delete
 router.delete('/delete/:id', async (req, res) => {
   await Student.findByIdAndDelete(req.params.id);
+  req.flash('success', 'Student Deleted successfully');
   res.redirect('/students');
 });
 
