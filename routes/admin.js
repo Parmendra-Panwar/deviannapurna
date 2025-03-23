@@ -25,7 +25,7 @@ router.post("/logout", athen.isloggedIn, (req, res) => {
 
 //Student
 router.get("/addStu", (req, res) => {
-  res.render("./admin/addStu.ejs")
+  res.render("./admin/addstu.ejs")
 })
 // POST route to add a new student
 
